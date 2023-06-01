@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="main">
+            <div class="card">
+            
+            <div class="ticket">
+                <div class="ticketheader">
+                    <h2>Билет</h2>
+                    <h3>#3123123</h3>
+                </div>
+                <div class="ticketbody">
+                    <h3>Имя: {{name}}</h3>
+                    <h3>Фамилия: {{surname}}</h3>
+                    <h3>Отчество:{{middlename}}</h3>
+                    <hr>
+                    <h5>Направление: {{selectedCountry}}</h5>
+                    <h5>Наличие багажа: {{hasBaggage}}</h5>
+                </div>
+            </div>
+            <div class="form">
+                <form>
+                    <h2>{{ headerName }}</h1>
+                     <p>{{headerDescription}}</p>
+                    <div class="inputform">
+                        <label>Имя</label>
+                        <input type="text" @input="saveName" placeholder="Введите имя">
+                    </div>
+                    <div class="inputform">
+                        <label>Фамилия</label>
+                        <input type="text" @input="saveSurname" placeholder="Введите фамилию">
+                    </div>
+                    <div class="inputform">
+                        <label>Отчество</label>
+                        <input type="text" @input="saveMiddlename" placeholder="Введите отчество">
+                    </div>
+                    <div class="inputform">
+                        <label>Направление</label>
+                        <select v-model="selectedCountry" id="countries">
+                            <option value="Италия">Италия</option>
+                            <option value="Испания">Испания</option>
+                            <option value="Франция">Франция</option>
+                            <option value="США">США</option>
+                          </select>    
+                     </div>
+                     <div class="radio">
+                     <label>Есть ли багаж?</label>
+                     <input type="radio" name="baggage" value="Да" v-model="hasBaggage">
+                     <label for="baggage">Есть</label><br>
+                     <input type="radio" name="baggage" value="Нет" v-model="hasBaggage">
+                     <label for="baggage">Нет</label><br>  
+                 </div>
+                </form>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
